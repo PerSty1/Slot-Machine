@@ -14,17 +14,10 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    overflow: hidden; /* Сховати вихід за межі */
-    width: 330px; /* Ширина контейнера під 3 картинки */
+    
 }
 
-.slot__item {
-    flex-shrink: 0; /* Забороняємо зменшення розміру елемента */
-    width: 100px;
-    margin: 0 5px;
-    transform: translateY(0); /* Початкове положення */
-    transition: transform 0.5s ease-out; /* Плавність переходу */
-}
+
 
 button {
     width: 278px;
@@ -42,5 +35,5 @@ button {
 
 button:active {
     box-shadow: 0 2px 2px rgba(0, 0, 0, 0.25), inset 0 2px 2px rgba(0, 0, 0, 0.5);
-    top: 2px;
+    
 }
