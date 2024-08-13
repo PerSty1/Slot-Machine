@@ -14,10 +14,31 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    
+    flex: 1;
 }
 
+.slot__item {
+    margin: 0 10px;
+    overflow: hidden; /* Сховати все, що виходить за межі слота */
+    height: 100px; /* Фіксована висота для кожного слота */
+    width: 100px; /* Фіксована ширина для кожного слота */
+    position: relative;
+}
 
+.slot__item img {
+    position: absolute;
+    top: -100%; /* Початкове положення зображення вище видимої області */
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    animation: spin 1s ease-in-out forwards; /* Базова анімація */
+}
+
+@keyframes spin {
+    0% { transform: translateY(-100%); }
+    100% { transform: translateY(0); }
+}
 
 button {
     width: 278px;
@@ -35,36 +56,4 @@ button {
 
 button:active {
     box-shadow: 0 2px 2px rgba(0, 0, 0, 0.25), inset 0 2px 2px rgba(0, 0, 0, 0.5);
-    
-}
-
-.container {
-	position: relative;
-	width: 500px;
-	max-width: 100%;
-	height: 400px;
-}
-
-.slot__item {
-	position: center;
-	width: 100%;
-	opacity: 0;
-	animation: change-img-anim 30s infinite;
-}
-
-.slot__item:nth-of-type(1) {
-	animation-delay: 0s;
-}
-.slot__item:nth-of-type(2) {
-	animation-delay: 10s;
-}
-.slot__item:nth-of-type(3) {
-	animation-delay: 20s;
-}
-
-@keyframes change-img-anim {
-	0%{ opacity: 0;}
-	10%{ opacity: 1;}
-	90%{ opacity: 1;}
-	100%{ opacity: 0;}
 }
